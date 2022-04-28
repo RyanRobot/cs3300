@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  root "projects#new"
+  root "projects#index"
   resources :projects
 end
