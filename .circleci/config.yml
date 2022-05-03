@@ -5,11 +5,11 @@ orbs:
   heroku: circleci/heroku@1.2.6
 
 jobs:
-  environment:
-    default: sheltered-beyond-16629
   build:
     docker:
       - image: 'tghastings/code-esaas'
+    environment:
+      default: sheltered-beyond-16629
     steps:
       - checkout
       - run:
