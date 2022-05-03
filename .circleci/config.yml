@@ -9,7 +9,7 @@ jobs:
     docker:
       - image: 'tghastings/code-esaas'
     environment:
-      default: sheltered-beyond-16629
+      heroku_url: sheltered-beyond-16629
     steps:
       - checkout
       - run:
