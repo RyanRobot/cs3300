@@ -5,6 +5,8 @@ orbs:
   heroku: circleci/heroku@1.2.6
 
 jobs:
+  environment:
+
   build:
     docker:
       - image: 'tghastings/code-esaas'
@@ -14,7 +16,7 @@ jobs:
           name: rspec
           command: bundle install && bundle exec rake db:migrate RAILS_ENV=test && bundle exec rspec
   deploy:
-    executor: heroku/default
+    executor: heroku/sheltered-beyond-16629
     steps:
       - checkout
       - heroku/install
