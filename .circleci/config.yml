@@ -9,7 +9,8 @@ jobs:
     docker:
       - image: 'tghastings/code-esaas'
     environment:
-      heroku_url: sheltered-beyond-16629
+      HEROKU_APP_NAME: sheltered-beyond-16629
+      HEROKU_API_KEY: acfca7a0-16f2-4497-a8fc-4a2c5ffafbd7
     steps:
       - checkout
       - run:
