@@ -8,15 +8,15 @@ jobs:
   build:
     docker:
       - image: 'tghastings/code-esaas'
-    environment:
-      HEROKU_APP_NAME: sheltered-beyond-16629
-      HEROKU_API_KEY: acfca7a0-16f2-4497-a8fc-4a2c5ffafbd7
     steps:
       - checkout
       - run:
           name: rspec
           command: bundle install && bundle exec rake db:migrate RAILS_ENV=test && bundle exec rspec
   deploy:
+    environment:
+      HEROKU_APP_NAME: sheltered-beyond-16629
+      HEROKU_API_KEY: acfca7a0-16f2-4497-a8fc-4a2c5ffafbd7
     executor: heroku/default
     steps:
       - checkout
